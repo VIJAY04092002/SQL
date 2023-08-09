@@ -1,0 +1,54 @@
+SQL Database Commands and Queries
+Table of Contents
+Creating and Using Databases
+Creating and Manipulating Tables
+Querying Data
+SQL Operators
+Aggregate Functions
+Constraints
+Joining Tables
+
+CREATE DATABASE VijayDB;
+USE VijayDB;
+CREATE TABLE Student (
+    ID INT,
+    NAME VARCHAR(255),
+    AGE INT
+);
+
+INSERT INTO Student (ID, NAME, AGE)
+VALUES ('1', 'Vijay', '20');
+SELECT * FROM Student;
+SELECT ID, NAME, AGE FROM Student;
+SELECT * FROM EMP
+WHERE CITY='KVP' AND SALARY >= '50000';
+SELECT * FROM EMP
+WHERE CITY='KVP' OR CITY='Chennai';
+SELECT * FROM EMP
+WHERE NOT SALARY > '75000';
+SELECT MAX(Salary) AS MaxSalary
+FROM EMP;
+
+SELECT MIN(Salary) AS MinSalary
+FROM EMP;
+
+SELECT AVG(Salary) AS AvgSalary
+FROM EMP
+WHERE Salary > '50000';
+
+SELECT COUNT(EMPNAME) AS CountAbove50K
+FROM EMP
+WHERE SALARY > '50000';
+CREATE TABLE Employee (
+    ID INT NOT NULL UNIQUE,
+    EMPNAME VARCHAR(255) NOT NULL,
+    CITY VARCHAR(255),
+    SALARY INT
+);
+SELECT COUNT(*) FROM DimCustomer
+INNER JOIN DimGeography
+ON DimGeography.GeographyKey = DimCustomer.GeographyKey;
+
+SELECT * FROM DimCustomer
+FULL JOIN DimGeography
+ON DimGeography.GeographyKey = DimCustomer.GeographyKey;
