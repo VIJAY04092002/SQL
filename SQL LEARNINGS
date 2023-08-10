@@ -52,3 +52,11 @@ ON DimGeography.GeographyKey = DimCustomer.GeographyKey;
 SELECT * FROM DimCustomer
 FULL JOIN DimGeography
 ON DimGeography.GeographyKey = DimCustomer.GeographyKey;
+ALTER COMMAND:
+ALTER TABLE EMP
+add age int;
+ALTER TABLE EMP
+DROP age ;
+UPDATE COMMAND:
+UPDATE EMP
+SET SALARY='9500',EMPNAME='NEW',CITY='TKL' WHERE ID ='4';
