@@ -1,0 +1,23 @@
+SET 001:JOINS,GROUPBY,HAVING
+set 1:
+
+SELECT customer.id, customer.name, customer.age, plan.name AS plan_name, plan.price AS plan_price
+FROM customer
+INNER JOIN plan ON customer.plan_id = plan.id
+WHERE customer.age >= 18
+ORDER BY customer.id DESC;
+
+Set 2:
+SELECT c.id, c.versionname, c.versionnumber, p.versionname AS previous_version_name
+FROM operating_system c
+LEFT JOIN operating_system p ON c.previous_version_id = p.id
+ORDER BY c.id DESC;
+
+Set 3: REFER SCREENSHOTS
+Set 4: REFER SCREENSHOTS
+Set 5: SELECT producttype, COUNT(*) AS product_count
+FROM product
+WHERE price >= 50
+GROUP BY producttype
+ORDER BY producttype;
+Set 6: REFER SCREENSHOTS
